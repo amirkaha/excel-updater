@@ -1,11 +1,7 @@
 import java.io.File;
 import java.io.FileInputStream;
-import java.net.URL;
-
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.*;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.poi.util.SystemOutLogger;
 
 public class PDFReader {
     private String cdNumber;
@@ -42,11 +38,9 @@ public class PDFReader {
 
     public String getFileName () { return this.fileName; }
 
-
     public void ReadPDFFile() throws Exception {
         String[] pathnames;
         File f = new File("C:\\Users\\Essam\\Desktop\\Animation");
-        // Populates the array with names of files and directories
         pathnames = f.list();
 
         String[] pathNamesCountdown;
@@ -54,25 +48,19 @@ public class PDFReader {
         pathNamesCountdown = g.list();
 
         for (String pathname : pathnames) {
-            // Print the names of files and directories
-            System.out.println(pathname);
             if (pathname.contains("Purchase Order")) {
                  fileName = pathname;
             }
         }
 
-        // if the file is available in local machine
         File file = new File("C:\\Users\\Essam\\Desktop\\Animation\\" + fileName);
         FileInputStream fis = new FileInputStream(file);
         PDDocument pdfDocument = PDDocument.load(fis);
-       // System.out.println("Number of Pages: " + pdfDocument.getPages().getCount());
 
         PDFTextStripper pdfTextStripper = new PDFTextStripper();
-        pdfTextStripper.setStartPage(1); // comment this line if you want to read the entire document
-        pdfTextStripper.setEndPage(3); // comment this line if you want to read the entire document
+        pdfTextStripper.setStartPage(1);
+        pdfTextStripper.setEndPage(3);
         String docText = pdfTextStripper.getText(pdfDocument);
-
-
 
         String lines[] = docText.split("\\r?\\n");
 
@@ -82,14 +70,11 @@ public class PDFReader {
          portOfLoading = textModifier(lines[27]);
 
         for (String pathNameCountdown : pathNamesCountdown) {
-            // Print the names of files and directories
-            System.out.println(pathNameCountdown);
             if (pathNameCountdown.contains(cdNumber)) {
                 System.out.println("Error, this order number (" + cdNumber + " ) already exists");
                 System.exit(0);
             }
         }
-
 
         if (docText.contains("Real Rice Short Grain 5kg")) {
             riceType = "Short Grain";
@@ -104,11 +89,6 @@ public class PDFReader {
 
         if (docText.contains("THBKK")) {
             System.out.println("Error! Port of loading is Thailand, please request to change to Vietnam");
-        }
-
-        for(String line: lines) {
-           // System.out.println(line);
-
         }
 
         System.out.println(riceType);

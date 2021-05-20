@@ -13,12 +13,10 @@ public class EmailDan {
     private final static By PASSWORD = By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input");
     private final static By NEXT = By.id("passwordNext");
     private final static By COMPOSE = By.xpath("//*[@id=\":k1\"]/div/div");
-    private final static By ENLARGE = By.id(":mb");
     private final static By TO = By.xpath("//textarea[@name='to']");
     private final static By SUBJECT = By.xpath("//input[@name='subjectbox']");
-    private final static By EMAIL_BODY = By.id("//*[@id=\":qb\"]");
 
-     WebDriver driver = new ChromeDriver();
+    WebDriver driver = new ChromeDriver();
     WebDriverWait wait = new WebDriverWait(driver, 30);
 
     public EmailDan loadPage() {
@@ -57,12 +55,10 @@ public class EmailDan {
         return this;
     }
 
-
     public EmailDan typeEmailAddress() throws InterruptedException {
         Thread.sleep(4000);
         waitFor(TO);
         driver.findElement(TO).sendKeys("dan@malaysiarice.com.sg");
-
         return this;
     }
 
@@ -73,12 +69,6 @@ public class EmailDan {
         return this;
     }
 
-//    public EmailDan typeEmail (String riceType) {
-//        waitFor(EMAIL_BODY);
-//        driver.findElement(EMAIL_BODY).sendKeys("Hi Dan," + Keys.ENTER + Keys.ENTER + "Please see the attached order for " + riceType + "." + Keys.ENTER + Keys.ENTER + "Thanks,");
-//        return this;
-//    }
-
     public void attachFile (String ggOrderNumber, String cdOrderNumber) {
         driver.findElement(By.xpath("//input[@name='Filedata']")).sendKeys("C:\\Users\\Essam\\Documents\\Countdown Real Rice Orders\\" + ggOrderNumber + cdOrderNumber + "\\WW Order Number " + ggOrderNumber + "" + cdOrderNumber + ".docx");
     }
@@ -87,10 +77,4 @@ public class EmailDan {
         wait.until(visibilityOfElementLocated(by));
         wait.until(elementToBeClickable(by));
     }
-
-
-
-
-
-
 }
