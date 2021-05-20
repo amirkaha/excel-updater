@@ -1,5 +1,5 @@
 # excel-updater
-Created a programme that can automate the entire process of international Countdown Rice Orders, saving time, add efficiency but most importantly eliminate any human error,
+Created a program that can automate the entire process of international Countdown Rice Orders, saving time, add efficiency but most importantly eliminate any human error,
 as well as check for any mistakes in the order itself.
 
 The program will:
