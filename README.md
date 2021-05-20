@@ -1,10 +1,10 @@
 # excel-updater
-Created a program that can automate the entire process of international Countdown Rice Orders, saving time, add efficiency but most importantly eliminate any human error,
-as well as check for any mistakes in the order itself.
+Created a program that can automate the entire process of international Countdown Rice Orders, saving time, adding efficiency but most importantly eliminate any human error
+as well as checking for any mistakes in the order itself.
 
 The program will:
 
-1/ Read the Coundown order emailed to us(PDF file) using PDF reader, and ensure the port of loading correct.
+1/ Read the Coundown order emailed to us (PDF file) using PDF reader, and ensure the port of loading correct.
 
 2/ From the PDF, the Countdown order number, Ship before date, Ship after date and type of Rice data will be extracted.
 
