@@ -1,13 +1,12 @@
 public class App {
     public static void main( String[] args ) throws Exception {
-        System.out.println( "Hello World!" );
         PDFReader pdfReader = new PDFReader();
         pdfReader.ReadPDFFile();
 
         WordModifier wordModifier = new WordModifier();
         wordModifier.replaceAndCreate();
 
-        System.out.println(" main method execution end.........");
+        System.out.println(" main method execution.........");
 
         EmailDan emailDan = new EmailDan();
 
