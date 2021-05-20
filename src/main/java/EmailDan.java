@@ -41,7 +41,7 @@ public class EmailDan {
 
     public EmailDan enterPassword() {
         waitFor(PASSWORD);
-        driver.findElement(PASSWORD).sendKeys("");
+        driver.findElement(PASSWORD).sendKeys("test");
         return this;
     }
 
