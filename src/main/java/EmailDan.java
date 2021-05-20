@@ -27,7 +27,7 @@ public class EmailDan {
 
     public EmailDan enterEmail() {
         waitFor(EMAIL);
-        driver.findElement(EMAIL).sendKeys("essam@ggfoods.co.nz");
+        driver.findElement(EMAIL).sendKeys(" ");
         return this;
     }
 
@@ -58,7 +58,7 @@ public class EmailDan {
     public EmailDan typeEmailAddress() throws InterruptedException {
         Thread.sleep(4000);
         waitFor(TO);
-        driver.findElement(TO).sendKeys("dan@malaysiarice.com.sg");
+        driver.findElement(TO).sendKeys(" ");
         return this;
     }
 
